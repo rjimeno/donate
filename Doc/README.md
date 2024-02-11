@@ -3,7 +3,7 @@
 The idea for Donate came from a Systems Design interview. The
 paragraphs below are the only part of this system that was
 not original, but copied, adapted, inherited (or similar) from the
-interviw.
+interview.
 
 ### Design a web-based system for running an online charity campaign.
 
