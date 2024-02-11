@@ -1,0 +1,5 @@
+resource "aws_key_pair" "deployer" {
+  key_name   = "aws_key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC76TM/J9jKnbVWunyfhNSKI0vQ+Z3KiiC7PNj2TFpZiX5Oe0zfHlnkCW++0Ph15eMDmbiSzLEXJR72Gr6u5Vkb64hUEYdh7qOmw2VYudQNHuq64I125Q26BPEo3yKh9xS3r4pgBllj2IU21mdf+MQMIDdAvKs1Iokzqodab/39NeemyVznM+HIidrNQT8xVx5imer7AJmyfT3tK7lgBTlO8ErF8Cw1YdXrq5MJgjHsRdepcfOPmnTFkVi8APWEbJmlIePlj4rcblFpkJ0W2K2QLaCyntYGU6NEnOhJY2VZeSvaYhv+QcI4ni0mdghEfZmdPY2vbxsTOs7pIiLGcgQ0ZYcM1PDMQJamuUeVkPUnNU+yrG5e+wDp3au9yBSOaSQFG7sTT5CnXkH24sow0G6W2FYwaIzolP7kmbA0XeonBUnmmogWf+rZlgCvLeh539ElFXVkVJD/vOrCXZY3FDEjI0ofNo5qJ570KTpfekAm4OHgBBcPApU8C1jJTUzj8/8="
+  # The key pair outisde of Terraform control (perhapps .gitignored).
+}
