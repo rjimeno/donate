@@ -14,6 +14,7 @@ MYSQL_FILE=$(mktemp mysql.XXXXXXXXXX)
 DATABASE_NAME=donate
 echo user_data inlined script begints execution
 sudo dnf update -y
+sudo dnf install -y git  # Useful in the aux node only (or mostly).
 sudo dnf install -y mariadb105
 echo "CREATE DATABASE $DATABASE_NAME;" > $MYSQL_FILE # Creates the file.
 echo "USE $DATABASE_NAME;" >> $MYSQL_FILE
