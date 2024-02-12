@@ -1,5 +1,5 @@
 resource "aws_instance" "tf_instance" {
-  ami           = "ami-0e731c8a588258d0d" # Amazon Linux 2023
+ami           = "ami-0e731c8a588258d0d" # Amazon Linux 2023
   instance_type = "t2.micro"
   key_name      = "aws_key" # By default, user is admin, ec2-user or similar.
   vpc_security_group_ids = [
