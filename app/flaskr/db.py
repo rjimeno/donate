@@ -10,7 +10,7 @@ def get_mydb():
         # configuration files, build-time or dynamically as needed.
         g.db = mysql.connector.connect(
             database='donate',
-            host="<RDS_DATABASE_HOST_NAME>",
+            host="rds-database.c0kpocvviuv9.us-east-1.rds.amazonaws.com",
             user="db_admin",
             password=os.environ['TF_VAR_db_password']
         )
