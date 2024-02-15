@@ -10,11 +10,11 @@ def get_mydb():
         # configuration files, build-time or dynamically as needed.
         g.db = mysql.connector.connect(
             database='donate',
-            host="<RDS_DATABASE_HOST_NAME>",
+            host="rds-database.c0kpocvviuv9.us-east-1.rds.amazonaws.com",
             user="db_admin",
             password=os.environ['TF_VAR_db_password']
         )
-
+    print(f"g.db == {g.db}")
     return g.db
 
 def close_db(e=None):
@@ -28,7 +28,19 @@ def init_mydb():
     mycursor = db.cursor()
 
     with current_app.open_resource('schema.sql') as f:
-        mycursor.execute(f.read().decode('utf8'), multi=True)
+        multi_line_statement = f.read().decode('utf8')
+        print(f"multi_line_statement == {multi_line_statement}")
+        single_line_statement = multi_line_statement.replace('\n', '')
+        print(f"single_line_statement == {single_line_statement}")
+        mycursor.execute(single_line_statement)
+        # while True:
+        #     l = f.readline().decode('utf8')
+        #     if not l:
+        #         break
+        #     print(f"l == {l}")
+        #     mycursor.execute(l) #, multi=True)
+        #     #mycursor.execute(f.read().decode('utf8'), multi=True)
+        print(f"mycursor == {mycursor}")
     f.close()
 
 def init_app(app):
@@ -38,6 +50,6 @@ def init_app(app):
 @click.command('init-db')
 def init_db_command():
     """Clear the existing data and create new tables."""
-    #init_db()
+    print(os.environ['TF_VAR_db_password'])
     init_mydb()
     click.echo('Initialized the database.')
